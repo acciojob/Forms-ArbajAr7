@@ -1,9 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Form from './Form';
-import FormRef from './FormRef';
-import FormState from './FormState';
-import Card from './Card';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Section1 from "./Section1";
+import Section2 from "./Section2";
+import Section3 from "./Section3";
 
 function App() {
   return (
@@ -11,22 +10,28 @@ function App() {
       <div>
         <nav>
           <ul>
-            <li id="form-link">
-              <Link to="/">Form Layout</Link>
+            <li>
+              <Link to="/form" id="form-link">
+                Section 1
+              </Link>
             </li>
-            <li id="form-ref-link">
-              <Link to="/form-ref">Form with useRef</Link>
+            <li>
+              <Link to="/form-ref" id="form-ref-link">
+                Section 2
+              </Link>
             </li>
-            <li id="form-state-link">
-              <Link to="/form-state">Form with useState</Link>
+            <li>
+              <Link to="/form-state" id="form-state-link">
+                Section 3
+              </Link>
             </li>
           </ul>
         </nav>
 
         <Routes>
-          <Route path="/" element={<Card><Form /></Card>} />
-          <Route path="/form-ref" element={<Card><FormRef /></Card>} />
-          <Route path="/form-state" element={<Card><FormState /></Card>} />
+          <Route path="/form" element={<Section1 />} />
+          <Route path="/form-ref" element={<Section2 />} />
+          <Route path="/form-state" element={<Section3 />} />
         </Routes>
       </div>
     </Router>
