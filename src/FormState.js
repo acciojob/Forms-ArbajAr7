@@ -17,7 +17,7 @@ const FormState = () => {
     event.preventDefault();
     console.log(formData);
 
-    // Reset form fields
+    
     setFormData({
       fullName: '',
       email: '',
